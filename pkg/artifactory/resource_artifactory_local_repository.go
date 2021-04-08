@@ -28,10 +28,10 @@ func resourceArtifactoryLocalRepository() *schema.Resource {
 				ForceNew: true,
 			},
 			"package_type": {
-				Type:     schema.TypeString,
-				Optional: true,
-				ForceNew: true,
-				Computed: true,
+				Type:         schema.TypeString,
+				Optional:     true,
+				ForceNew:     true,
+				Computed:     true,
 				ValidateFunc: repoTypeValidator,
 			},
 			"description": {
@@ -139,6 +139,11 @@ func resourceArtifactoryLocalRepository() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
+			"priority_resolution": {
+				Type:     schema.TypeBool,
+				Optional: true,
+				Computed: true,
+			},
 		},
 	}
 }
@@ -174,6 +179,7 @@ func unmarshalLocalRepository(s *schema.ResourceData) *v1.LocalRepository {
 	repo.SuppressPomConsistencyChecks = d.getBoolRef("suppress_pom_consistency_checks", false)
 	repo.XrayIndex = d.getBoolRef("xray_index", false)
 	repo.ForceNugetAuthentication = d.getBoolRef("force_nuget_authentication", false)
+	repo.PriorityResolution = d.getBoolRef("priority_resolution", false)
 
 	return repo
 }

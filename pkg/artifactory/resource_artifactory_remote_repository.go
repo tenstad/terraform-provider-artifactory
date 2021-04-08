@@ -30,10 +30,10 @@ func resourceArtifactoryRemoteRepository() *schema.Resource {
 				ForceNew: true,
 			},
 			"package_type": {
-				Type:     schema.TypeString,
-				Optional: true,
-				ForceNew: true,
-				Default:  "generic",
+				Type:         schema.TypeString,
+				Optional:     true,
+				ForceNew:     true,
+				Default:      "generic",
 				ValidateFunc: repoTypeValidator,
 			},
 			"description": {
@@ -300,6 +300,11 @@ func resourceArtifactoryRemoteRepository() *schema.Resource {
 					},
 				},
 			},
+			"priority_resolution": {
+				Type:     schema.TypeBool,
+				Optional: true,
+				Computed: true,
+			},
 		},
 	}
 }
@@ -356,6 +361,7 @@ func unpackRemoteRepo(s *schema.ResourceData) *v1.RemoteRepository {
 	repo.DownloadContextPath = d.getStringRef("download_context_path", true)
 	repo.V3FeedUrl = d.getStringRef("v3_feed_url", true)
 	repo.ForceNugetAuthentication = d.getBoolRef("force_nuget_authentication", false)
+	repo.PriorityResolution = d.getBoolRef("priority_resolution", false)
 	if v, ok := d.GetOk("content_synchronisation"); ok {
 		contentSynchronisationConfig := v.([]interface{})[0].(map[string]interface{})
 		enabled := contentSynchronisationConfig["enabled"].(bool)
