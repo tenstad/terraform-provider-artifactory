@@ -433,6 +433,7 @@ func packRemoteRepo(repo *v1.RemoteRepository, d *schema.ResourceData) error {
 	logErr(d.Set("download_context_path", repo.DownloadContextPath))
 	logErr(d.Set("v3_feed_url", repo.V3FeedUrl))
 	logErr(d.Set("force_nuget_authentication", repo.ForceNugetAuthentication))
+	logErr(d.Set("priority_resolution", repo.PriorityResolution))
 	if repo.ContentSynchronisation != nil {
 		logErr(d.Set("content_synchronisation", []interface{}{
 			map[string]*bool{

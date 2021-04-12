@@ -233,6 +233,7 @@ func resourceLocalRepositoryRead(d *schema.ResourceData, m interface{}) error {
 		logError(d.Set("suppress_pom_consistency_checks", repo.SuppressPomConsistencyChecks))
 		logError(d.Set("xray_index", repo.XrayIndex))
 		logError(d.Set("force_nuget_authentication", repo.ForceNugetAuthentication))
+		logError(d.Set("priority_resolution", repo.PriorityResolution))
 
 		if hasErr {
 			return fmt.Errorf("failed to marshal group")
