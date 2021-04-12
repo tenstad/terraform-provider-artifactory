@@ -10,11 +10,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/atlassian/go-artifactory/v2/artifactory"
-	artifactoryold "github.com/atlassian/go-artifactory/v2/artifactory"
-	v1 "github.com/atlassian/go-artifactory/v2/artifactory/v1"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/hashcode"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/tenstad/go-artifactory/v2/artifactory"
+	artifactoryold "github.com/tenstad/go-artifactory/v2/artifactory"
+	v1 "github.com/tenstad/go-artifactory/v2/artifactory/v1"
 )
 
 func resourceArtifactoryAccessToken() *schema.Resource {

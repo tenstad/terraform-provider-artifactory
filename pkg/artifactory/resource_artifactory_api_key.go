@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"strconv"
 
-	v1 "github.com/atlassian/go-artifactory/v2/artifactory/v1"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/hashcode"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	v1 "github.com/tenstad/go-artifactory/v2/artifactory/v1"
 )
 
 func resourceArtifactoryApiKey() *schema.Resource {

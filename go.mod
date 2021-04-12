@@ -1,7 +1,7 @@
-module github.com/atlassian/terraform-provider-artifactory
+module github.com/tenstad/terraform-provider-artifactory
 
 require (
-	github.com/tenstad/go-artifactory/v2 v2.5.1
+	github.com/tenstad/go-artifactory/v2 v2.5.4
 	github.com/go-delve/delve v1.6.0 // indirect
 	github.com/hashicorp/terraform-plugin-sdk v1.7.0
 	github.com/jfrog/jfrog-client-go v0.13.1

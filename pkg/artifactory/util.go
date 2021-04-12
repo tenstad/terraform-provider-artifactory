@@ -5,8 +5,8 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/atlassian/go-artifactory/v2/artifactory"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/tenstad/go-artifactory/v2/artifactory"
 )
 
 type ResourceData struct{ *schema.ResourceData }

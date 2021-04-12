@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/atlassian/go-artifactory/v2/artifactory"
-	v1 "github.com/atlassian/go-artifactory/v2/artifactory/v1"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	"github.com/tenstad/go-artifactory/v2/artifactory"
+	v1 "github.com/tenstad/go-artifactory/v2/artifactory/v1"
 )
 
 func resourceArtifactoryVirtualRepository() *schema.Resource {
@@ -28,9 +28,9 @@ func resourceArtifactoryVirtualRepository() *schema.Resource {
 				ForceNew: true,
 			},
 			"package_type": {
-				Type:     schema.TypeString,
-				Required: true,
-				ForceNew: true,
+				Type:         schema.TypeString,
+				Required:     true,
+				ForceNew:     true,
 				ValidateFunc: repoTypeValidator,
 			},
 			"repositories": {

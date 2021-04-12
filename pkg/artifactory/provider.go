@@ -2,8 +2,9 @@ package artifactory
 
 import (
 	"fmt"
-	artifactoryold "github.com/atlassian/go-artifactory/v2/artifactory"
-	"github.com/atlassian/go-artifactory/v2/artifactory/transport"
+	"net/http"
+	"net/url"
+
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
@@ -13,9 +14,9 @@ import (
 	auth2 "github.com/jfrog/jfrog-client-go/auth"
 	"github.com/jfrog/jfrog-client-go/config"
 	"github.com/jfrog/jfrog-client-go/utils/log"
+	artifactoryold "github.com/tenstad/go-artifactory/v2/artifactory"
+	"github.com/tenstad/go-artifactory/v2/artifactory/transport"
 	"github.com/xero-oss/go-xray/xray"
-	"net/http"
-	"net/url"
 )
 var repoTypeValidator = validation.StringInSlice([]string{
 	"alpine",

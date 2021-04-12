@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"strings"
 
-	v1 "github.com/atlassian/go-artifactory/v2/artifactory/v1"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
+	v1 "github.com/tenstad/go-artifactory/v2/artifactory/v1"
 )
 
 func resourceArtifactoryCertificate() *schema.Resource {

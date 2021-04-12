@@ -7,9 +7,9 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/helper/resource"
 
-	v2 "github.com/atlassian/go-artifactory/v2/artifactory/v2"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/validation"
+	v2 "github.com/tenstad/go-artifactory/v2/artifactory/v2"
 )
 
 func resourceArtifactoryPermissionTargets() *schema.Resource {
