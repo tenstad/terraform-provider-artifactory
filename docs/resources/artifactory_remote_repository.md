@@ -70,6 +70,7 @@ Arguments have a one to one mapping with the [JFrog API](https://www.jfrog.com/c
 * `download_context_path` - (Optional, Nuget repos only)
 * `v3_feed_url` - (Optional, Nuget repos only)
 * `force_nuget_authentication` - (Optional, Nuget repos only) 
+* `priority_resolution` - (Optional) 
 * `nuget` - (Optional) Deprecated since 6.9.0+ Nuget repository special configuration
   * `feed_context_path` - (Optional)
   * `download_context_path` - (Optional)
