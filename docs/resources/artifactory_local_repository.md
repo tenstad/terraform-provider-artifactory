@@ -39,6 +39,7 @@ Arguments have a one to one mapping with the [JFrog API](https://www.jfrog.com/c
 * `docker_api_version` - (Optional) 
 * `enable_file_lists_indexing` - (Optional) 
 * `force_nuget_authentication` - (Optional, Nuget repos only) 
+* `block_pushing_schema1` - (Optional) 
 * `priority_resolution` - (Optional) 
 
 ## Import
