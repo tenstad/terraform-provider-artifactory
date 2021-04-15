@@ -300,11 +300,6 @@ func resourceArtifactoryRemoteRepository() *schema.Resource {
 					},
 				},
 			},
-			"block_pushing_schema1": {
-				Type:     schema.TypeBool,
-				Optional: true,
-				Computed: true,
-			},
 			"priority_resolution": {
 				Type:     schema.TypeBool,
 				Optional: true,
@@ -366,7 +361,6 @@ func unpackRemoteRepo(s *schema.ResourceData) *v1.RemoteRepository {
 	repo.DownloadContextPath = d.getStringRef("download_context_path", true)
 	repo.V3FeedUrl = d.getStringRef("v3_feed_url", true)
 	repo.ForceNugetAuthentication = d.getBoolRef("force_nuget_authentication", false)
-	repo.BlockPushingSchema1 = d.getBoolRef("block_pushing_schema1", false)
 	repo.PriorityResolution = d.getBoolRef("priority_resolution", false)
 	if v, ok := d.GetOk("content_synchronisation"); ok {
 		contentSynchronisationConfig := v.([]interface{})[0].(map[string]interface{})
@@ -439,7 +433,6 @@ func packRemoteRepo(repo *v1.RemoteRepository, d *schema.ResourceData) error {
 	logErr(d.Set("download_context_path", repo.DownloadContextPath))
 	logErr(d.Set("v3_feed_url", repo.V3FeedUrl))
 	logErr(d.Set("force_nuget_authentication", repo.ForceNugetAuthentication))
-	logErr(d.Set("block_pushing_schema1", repo.BlockPushingSchema1))
 	logErr(d.Set("priority_resolution", repo.PriorityResolution))
 	if repo.ContentSynchronisation != nil {
 		logErr(d.Set("content_synchronisation", []interface{}{

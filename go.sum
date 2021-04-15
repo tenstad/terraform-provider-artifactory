@@ -215,6 +215,8 @@ github.com/stretchr/testify v1.5.1 h1:nOGnQDM7FYENwehXlg/kFVnos3rEvtKTjRvOWSzb6H
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
 github.com/tenstad/go-artifactory/v2 v2.5.5 h1:S4WTLGn5FcDLn9ld3XXDTS9fHXvesLmT/ePIz9Fv6g8=
 github.com/tenstad/go-artifactory/v2 v2.5.5/go.mod h1:0rYx+YbKJW94wZ5mK3uN6DQhzm3Hq6iTbbTe5bogKhE=
+github.com/tenstad/go-artifactory/v2 v2.5.6 h1:8IrRaC9fTLzxINxES5An/gQlPi5nmJK2GTb2EaHsriA=
+github.com/tenstad/go-artifactory/v2 v2.5.6/go.mod h1:0rYx+YbKJW94wZ5mK3uN6DQhzm3Hq6iTbbTe5bogKhE=
 github.com/ulikunitz/xz v0.5.5/go.mod h1:2bypXElzHzzJZwzH67Y6wb67pO62Rzfn7BSiF4ABRW8=
 github.com/ulikunitz/xz v0.5.6 h1:jGHAfXawEGZQ3blwU5wnWKQJvAraT7Ftq9EXjnXYgt8=
 github.com/ulikunitz/xz v0.5.6/go.mod h1:2bypXElzHzzJZwzH67Y6wb67pO62Rzfn7BSiF4ABRW8=
