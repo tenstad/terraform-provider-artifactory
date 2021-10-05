@@ -339,7 +339,7 @@ func unpackRemoteRepo(s *schema.ResourceData) *v1.RemoteRepository {
 	repo.BowerRegistryURL = d.getStringRef("bower_registry_url", true)
 	repo.BypassHeadRequests = d.getBoolRef("bypass_head_requests", true)
 	repo.ClientTLSCertificate = d.getStringRef("client_tls_certificate", true)
-	repo.ExternalDependenciesEnabled = d.getStringRef("external_dependencies_enabled", true)
+	repo.ExternalDependenciesEnabled = d.getBoolRef("external_dependencies_enabled", true)
 	repo.ExternalDependenciesPatterns = d.getListRef("external_dependencies_patterns")
 	repo.Description = d.getStringRef("description", true)
 	repo.EnableCookieManagement = d.getBoolRef("enable_cookie_management", true)
