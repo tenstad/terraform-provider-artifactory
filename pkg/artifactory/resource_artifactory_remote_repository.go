@@ -209,7 +209,7 @@ func resourceArtifactoryRemoteRepository() *schema.Resource {
 			},
 			"external_dependencies_patterns": {
 				Type:     schema.TypeList,
-				Elem:     schema.TypeString,
+				Elem:     &schema.Schema{Type: schema.TypeString},
 				Optional: true,
 				Computed: true,
 			},
