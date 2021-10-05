@@ -63,6 +63,8 @@ Arguments have a one to one mapping with the [JFrog API](https://www.jfrog.com/c
 * `allow_any_host_auth` - (Optional)
 * `enable_cookie_management` - (Optional)
 * `client_tls_certificate` - (Optional)
+* `external_dependencies_enabled` - (Optional)
+* `external_dependencies_patterns` - (Optional)
 * `pypi_registry_url` - (Optional)
 * `bypass_head_requests` - (Optional)
 * `enable_token_authentication` - (Optional)

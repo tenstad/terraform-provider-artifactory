@@ -202,6 +202,17 @@ func resourceArtifactoryRemoteRepository() *schema.Resource {
 				Optional: true,
 				Computed: true,
 			},
+			"external_dependencies_enabled": {
+				Type:     schema.TypeBool,
+				Optional: true,
+				Computed: true,
+			},
+			"external_dependencies_patterns": {
+				Type:     schema.TypeList,
+				Elem:     schema.TypeString,
+				Optional: true,
+				Computed: true,
+			},
 			"pypi_registry_url": {
 				Type:     schema.TypeString,
 				Optional: true,
@@ -328,6 +339,8 @@ func unpackRemoteRepo(s *schema.ResourceData) *v1.RemoteRepository {
 	repo.BowerRegistryURL = d.getStringRef("bower_registry_url", true)
 	repo.BypassHeadRequests = d.getBoolRef("bypass_head_requests", true)
 	repo.ClientTLSCertificate = d.getStringRef("client_tls_certificate", true)
+	repo.ExternalDependenciesEnabled = d.getStringRef("external_dependencies_enabled", true)
+	repo.ExternalDependenciesPatterns = d.getListRef("external_dependencies_patterns")
 	repo.Description = d.getStringRef("description", true)
 	repo.EnableCookieManagement = d.getBoolRef("enable_cookie_management", true)
 	repo.EnableTokenAuthentication = d.getBoolRef("enable_token_authentication", true)
@@ -401,6 +414,8 @@ func packRemoteRepo(repo *v1.RemoteRepository, d *schema.ResourceData) error {
 	logErr(d.Set("bower_registry_url", repo.BowerRegistryURL))
 	logErr(d.Set("bypass_head_requests", repo.BypassHeadRequests))
 	logErr(d.Set("client_tls_certificate", repo.ClientTLSCertificate))
+	logErr(d.Set("external_dependencies_enabled", repo.ExternalDependenciesEnabled))
+	logErr(d.Set("external_dependencies_patterns", repo.ExternalDependenciesPatterns))
 	logErr(d.Set("description", repo.Description))
 	logErr(d.Set("enable_cookie_management", repo.EnableCookieManagement))
 	logErr(d.Set("enable_token_authentication", repo.EnableTokenAuthentication))
