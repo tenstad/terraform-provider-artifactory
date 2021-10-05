@@ -101,6 +101,8 @@ resource "artifactory_remote_repository" "terraform-remote-test-repo-full" {
 	enable_cookie_management              = true
 	remote_repo_checksum_policy_type      = "ignore-and-generate"
 	client_tls_certificate				  = ""
+	external_dependencies_enabled         = "true"
+	external_dependencies_patterns        = ["**"]
 	force_nuget_authentication 			  = true
 }`
 
@@ -147,6 +149,8 @@ func TestAccRemoteRepository_full(t *testing.T) {
 					resource.TestCheckResourceAttr("artifactory_remote_repository.terraform-remote-test-repo-full", "allow_any_host_auth", "false"),
 					resource.TestCheckResourceAttr("artifactory_remote_repository.terraform-remote-test-repo-full", "enable_cookie_management", "true"),
 					resource.TestCheckResourceAttr("artifactory_remote_repository.terraform-remote-test-repo-full", "client_tls_certificate", ""),
+					resource.TestCheckResourceAttr("artifactory_remote_repository.terraform-remote-test-repo-full", "external_dependencies_enabled", "true"),
+					resource.TestCheckResourceAttr("artifactory_remote_repository.terraform-remote-test-repo-full", "external_dependencies_patterns", "[\"**\"]"),
 					resource.TestCheckResourceAttr("artifactory_remote_repository.terraform-remote-test-repo-full", "remote_repo_checksum_policy_type", "ignore-and-generate"),
 					resource.TestCheckResourceAttr("artifactory_remote_repository.terraform-remote-test-repo-full", "force_nuget_authentication", "true"),
 				),
